@@ -1,0 +1,9 @@
+pytest
+Flask==1.1.4
+pathlib
+typing
+datetime
+flask_wtf
+password_validator
+python-dotenv
+sqlalchemy

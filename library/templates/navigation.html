@@ -1,0 +1,26 @@
+<nav id="nav">
+  <img id="logo" src="{{ url_for('static', filename='book.png') }}" />
+
+  <h2 id="nav-header">
+    {% if 'user_name' in session %} Hello, {{ session['user_name'] }} {%
+    endif %}
+  </h2>
+
+  <div>
+    <h2>
+      <a class="btn-nav" href="{{ url_for('home_bp.home') }}"> Home </a>
+    </h2>
+  </div>
+
+  <div>
+    <h2>
+      <a class="btn-nav" href="{{ url_for('browse_bp.browse_by_title') }}"> Browse </a>
+    </h2>
+  </div>
+
+  <a class="btn-nav" href="{{ url_for('authentication_bp.register') }}">Register</a>
+  <a class="btn-nav" href="{{ url_for('authentication_bp.login') }}">Login</a>
+  <a class="btn-nav" href="{{ url_for('authentication_bp.logout') }}">Logout</a>
+
+
+</nav>

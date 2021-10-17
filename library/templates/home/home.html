@@ -1,0 +1,50 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main">
+  <h1>
+    Book of the Day:
+  </h1>
+  <br />
+  <div id="book-container">
+    <h2>{{selected_book.title}}</h2>
+    <h3>
+      by
+      {{selected_book.authors}}
+    </h3>
+          {% if selected_book.average_rating == 5 %}
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      {% endif %}
+      {% if selected_book.average_rating == 4 %}
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      {% endif %}
+      {% if selected_book.average_rating == 3 %}
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      {% endif %}
+      {% if selected_book.average_rating == 2 %}
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      {% endif %}
+      {% if selected_book.average_rating == 1 %}
+      <img id=rating src="{{ url_for('static', filename='star.png') }}" align="left" />
+      {% endif %}
+
+          <br>
+          <br>
+    <p style="text-align: center;">{{selected_book.description}}</p>
+    {% if selected_book.description == "" or selected_book.description == null %}
+    NO description
+    {% endif %}
+
+  </div>
+
+
+</main>
+{% endblock %}
